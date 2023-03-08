@@ -64,11 +64,6 @@ body {
   margin: 0 30px 30px 30px;
   padding: 0;
   background-attachment: fixed;
-  /* overflow: hidden; */
-  /* background-image: url("logo.png");
-  background-repeat: no-repeat;
-  background-position: 100% 0;
-  background-size: 600px; */
 }
 
 h1 {
@@ -79,6 +74,7 @@ h1 {
   display: flex;
   align-items: center;
   line-height: 1.1;
+  justify-content: center;
 }
 
 h1 img {
@@ -96,10 +92,6 @@ h2 {
 }
 
 ul {
-  /* list-style-position: outside; */
-  /* padding-left: 2em; */
-  /* margin-bottom: 2em; */
-  /* display: block; */
 }
 li {
   margin-left: 1em;
@@ -117,6 +109,10 @@ p {
 
 header {
   margin-bottom: 2em;
+  width: 60ch;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form {
@@ -125,6 +121,7 @@ form {
   padding: 1em 2em 2em;
   border: 1px dashed #c5beb1;
   max-width: 60ch;
+  min-width: 100%;
 }
 
 label {
@@ -133,11 +130,12 @@ label {
   font-weight: 600;
 }
 input {
-  max-width: 100%;
-  display: block;
+  display: inline-block;
   margin-top: 1em;
   margin-bottom: 1em;
-  min-width: 40ch;
+  max-width: 100%;
+  width: 40ch;
+  /* min-width: 100%; */
   padding: 1em 1em;
 }
 
@@ -153,6 +151,10 @@ button,
   font-size: 16px;
   font-weight: 500;
   border-radius: 0.25em;
+}
+
+button {
+  padding: 1em 1em;
 }
 
 /* Grid */
