@@ -5,14 +5,14 @@ const imageDirectory = "images"; // replace with your image directory
 
 // read the image directory and create an array of file information objects
 const imageFiles = fs.readdirSync(imageDirectory).map((file) => {
-	const filePath = path.join(imageDirectory, file);
-	const stats = fs.statSync(filePath);
-	return {
-		filename: file,
-		path: filePath,
-		size: stats.size,
-		dateCreated: stats.birthtime,
-	};
+  const filePath = path.join(imageDirectory, file);
+  const stats = fs.statSync(filePath);
+  return {
+    filename: file,
+    path: filePath,
+    size: stats.size,
+    dateCreated: stats.birthtime,
+  };
 });
 
 // create the HTML for the image gallery
@@ -41,43 +41,66 @@ const galleryHtml = `
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLJ7FJK"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <header>
-        <section>
-        <h1>Reflective Cards Online</h1>
-        <p>
-        Reflective cards are a useful tool for social workers to help initiate
-        conversations with their clients. The cards contain thought-provoking
-        prompts designed to encourage clients to reflect on their thoughts,
-        feelings, and experiences.
-        </p>
+<header>
+<section>
+  <h1>
+      <img src="logo.png" width="30" />
+      <span> Reflective Cards</span>
+  </h1>
+  <p>
+    Reflective Cards is a tool for social workers to help initiate
+    conversations with their clients. The cards contain thought-provoking
+    prompts designed to encourage clients to reflect on their thoughts,
+    feelings, and experiences.
+  </p>
 
-        <p>
-            Ask you client to go through the image and ask to share their thoughts
-            on the topic. The reflective cards can be used in a variety of settings,
-            such as individual or group therapy sessions, and can help clients gain
-            insight into their emotions and behaviors. Whether you're a seasoned
-            social worker or a new practitioner, the reflective cards can be a
-            valuable addition to your toolkit.
-        </p>
-        </section>
-        <form name="subscribe" method="POST" data-netlify="true">
-        <h2>Take your practice to the next level</h2>
-        <label for="email">Get tips and tools straight to your inbox</label>
-        <input type="email" id="email" name="email" placeholder="Your email" />
-        <button type="submit">Subscribe</button>
-    </form>
-    </header>
+  <p>
+    Whether you're a seasoned social worker or a new practitioner, the
+    reflective cards can be a valuable addition to your toolkit.
+  </p>
+
+  <a class="btn" href="#start">Let's Start</a>
+
+  <h2>How to Use Reflective Cards</h2>
+
+  <ol>
+    <li>
+      Ask your client to go to ReflectiveCards.com and browse through the
+      image prompts.
+    </li>
+    <li>Have your client choose an image that resonates with them.</li>
+    <li>
+      Ask your client to reflect on their thoughts, feelings, and
+      experiences related to the image.
+    </li>
+    <li>
+      Engage your client in deeper, more meaningful conversations using
+      the reflective prompts provided by the image.
+    </li>
+    <li>Repeat the process with additional images as needed.</li>
+    <li>Track your client's progress over time.</li>
+  </ol>
+
+  <a class="btn" href="#start">Let's Start</a>
+</section>
+<form name="subscribe" method="POST" data-netlify="true">
+  <h2>Take your practice to the next level</h2>
+  <label for="email">Get tips and tools straight to your inbox</label>
+  <input type="email" id="email" name="email" placeholder="Your email" />
+  <button type="submit">Subscribe</button>
+</form>
+</header>
     <main class="container">
     ${imageFiles
-			.map(
-				(image, index) => `
+      .map(
+        (image, index) => `
     <figure>
         <img lazy src="${image.path}" alt="${image.filename}" />
         <figcaption><a href="#">${index + 1}</a></figcaption>
     </figure>
     `
-			)
-			.join("")}
+      )
+      .join("")}
     </main>
 </body>
 </html>
