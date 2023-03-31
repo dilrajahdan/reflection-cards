@@ -76,7 +76,6 @@ header {
   display: flex;
   align-items: center;
   padding: clamp(10px, 4vw, 30px);
-
   background: rgba(20, 19, 21, 0.5);
   backdrop-filter: blur(5px);
 }
@@ -151,6 +150,7 @@ form {
   border: 1px dashed #c5beb1;
   max-width: 60ch;
   min-width: 100%;
+  border-radius: 20px;
 }
 
 label {
@@ -182,6 +182,11 @@ button,
   border-radius: 0.25em;
 }
 
+.btn {
+  font-size: 2em;
+  display: block;
+  text-align: center;
+}
 button {
   padding: 1em 1em;
   background-color: var(--color-vigintinonary);
