@@ -172,11 +172,23 @@ img {
   display: block;
 }
 
-figure {
+.gallery figure {
   margin: 0;
   display: grid;
   grid-template-rows: 1fr auto;
   background-color: var(--color-bg);
+  max-height: 200px;
+}
+
+@media screen and (min-width: 460px) {
+  .gallery figure {
+    max-height: 300px;
+  }
+}
+@media screen and (min-width: 870px) {
+  .gallery figure {
+    max-height: auto;
+  }
 }
 
 figure > img {
@@ -184,6 +196,7 @@ figure > img {
   grid-column: 1;
   object-fit: cover;
   height: 100%;
+  width: 100%;
 }
 
 figure a {
@@ -203,7 +216,7 @@ figcaption {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: masonry;
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
   /* height: 200vh; */
   align-tracks: stretch;
 }
