@@ -66,6 +66,11 @@ body {
   background-attachment: fixed;
 }
 
+.logo {
+  color: #fff;
+  text-decoration: underline;
+}
+
 h1 {
   font-size: 2.5em;
   margin-top: 0.5em;
@@ -85,7 +90,7 @@ h1 img {
 
 h2 {
   font-size: 1.75em;
-  margin-top: 0.5em;
+  margin-top: 1em;
   margin-bottom: 0.25em;
   font-weight: 500;
   line-height: 1.1;
@@ -107,7 +112,9 @@ p {
   margin-bottom: 1em;
 }
 
-header {
+header,
+footer,
+.container {
   margin-bottom: 2em;
   width: 60ch;
   max-width: 100%;
@@ -155,6 +162,7 @@ button,
 
 button {
   padding: 1em 1em;
+  background-color: var(--color-vigintinonary);
 }
 
 /* Grid */
@@ -174,6 +182,8 @@ figure {
 figure > img {
   grid-row: 1 / -1;
   grid-column: 1;
+  object-fit: cover;
+  height: 100%;
 }
 
 figure a {
@@ -189,22 +199,27 @@ figcaption {
   justify-self: start;
 }
 
-.container {
+.gallery {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: masonry;
-  height: 200vh;
+  /* height: 200vh; */
   align-tracks: stretch;
 }
 
 @media screen and (min-width: 460px) {
-  .container {
+  .gallery {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (min-width: 870px) {
-  .container {
+  .gallery {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+.copyright {
+  margin: 2em 0;
+  font-size: 0.8em;
 }

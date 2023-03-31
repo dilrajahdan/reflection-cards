@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const imageDirectory = "images"; // replace with your image directory
+const imageDirectory = "cards"; // replace with your image directory
 
 // read the image directory and create an array of file information objects
 const imageFiles = fs.readdirSync(imageDirectory).map((file) => {
@@ -117,4 +117,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 `;
 
 // write the HTML to an index.html file
-fs.writeFileSync("index.html", galleryHtml);
+fs.writeFileSync("images.html", galleryHtml);
